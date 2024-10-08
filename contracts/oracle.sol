@@ -2,5 +2,5 @@
 pragma solidity ^0.8.27;
 
 contract FootbalOracle{
-    string x;
+
 }
