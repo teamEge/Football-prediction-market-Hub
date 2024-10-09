@@ -10,10 +10,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.12"
+    "hardhat": "^2.22.13"
   },
   "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "web3": "^4.13.0"
