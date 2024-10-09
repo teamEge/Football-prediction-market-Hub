@@ -20,7 +20,7 @@ contract FootballData{
 
         function updateScore(uint256 index, string memory newScore) public{
             require(index < matches.length, "Match does not exist");
-            require(!matches[index].isFinished, "Match is already finished");
+            require(!matches[index].isFinished, "Match is already finishedd");
 
             matches[index].score = newScore;
         }
