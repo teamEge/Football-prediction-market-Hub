@@ -20,7 +20,7 @@ contract FootballData{
 
         function updateScore(uint256 index, string memory newScore) public{
             require(index < matches.length, "Match does not exist");
-            require(!matches[index].isFinished, "Match is already finishedd");
+            require(!matches[index].isFinished, "Match is already finished");
 
             matches[index].score = newScore;
         }
@@ -29,4 +29,4 @@ contract FootballData{
         function getMatches() public view returns(Match[] memory){
             return matches;
         }
-}0x7A97C59E2473292C45D1fe2ebfeFE796782dD8ED
+}
