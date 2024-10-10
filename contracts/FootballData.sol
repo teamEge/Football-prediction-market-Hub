@@ -2,8 +2,8 @@
 pragma solidity ^0.8.27;
 
 contract FootballData{
+
     struct Match{
-    uint256 matchId;
     string homeTeam;
     string awayTeam;
     string score;
@@ -11,14 +11,25 @@ contract FootballData{
     uint256 endTime;
     }
     
+    
     Match[] public matches;
+    address public oracle;
 
-        function addMatch(uint256 matchId, string memory homeTeam,string memory awayTeam, uint256 endTime) public{
-            matches.push(Match(matchId, homeTeam, awayTeam, "0-0", false, endTime));
+        constructor() {
+        oracle = msg.sender;
+    }
+
+    modifier onlyOracle() {
+        require(msg.sender == oracle, "Only oracle can perform this action");
+        _;
+    }
+
+        function addMatch(string memory homeTeam,string memory awayTeam, uint256 endTime) public onlyOracle{
+            matches.push(Match(homeTeam, awayTeam, "0-0", false, endTime));
         }
 
 
-        function updateScore(uint256 index, string memory newScore) public{
+        function updateScore(uint256 index, string memory newScore) public onlyOracle{
             require(index < matches.length, "Match does not exist");
             require(!matches[index].isFinished, "Match is already finished");
 
@@ -26,7 +37,18 @@ contract FootballData{
         }
 
 
+        function finishMatches(uint256 index) public onlyOracle{
+            require(index < matches.length, "Match does not exist");
+            require(!matches[index].isFinished, "Match is already finished");
+
+            matches[index].isFinished = true;
+
+        }
+
+
         function getMatches() public view returns(Match[] memory){
             return matches;
         }
+        
+     
 }
