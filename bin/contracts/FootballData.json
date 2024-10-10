@@ -1,0 +1,1980 @@
+{
+    "contractName": "FootballData",
+    "abi": [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "homeTeam",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "awayTeam",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "addMatch",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "finishMatches",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getMatches",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "homeTeam",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "awayTeam",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "score",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isFinished",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct FootballData.Match[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "matches",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "homeTeam",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "awayTeam",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "score",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isFinished",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "oracle",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "newScore",
+                    "type": "string"
+                }
+            ],
+            "name": "updateScore",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"homeTeam\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"awayTeam\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"}],\"name\":\"addMatch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"finishMatches\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMatches\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"homeTeam\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"awayTeam\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"score\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isFinished\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"}],\"internalType\":\"struct FootballData.Match[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"matches\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"homeTeam\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"awayTeam\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"score\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isFinished\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"newScore\",\"type\":\"string\"}],\"name\":\"updateScore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/Egemen/Documents/GitHub/egepoly-hub/contracts/FootballData.sol\":\"FootballData\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"c:/Users/Egemen/Documents/GitHub/egepoly-hub/contracts/FootballData.sol\":{\"keccak256\":\"0x4450f5170866501b1545c350a7376a4a7a535cdd0765928505f458328b7762ab\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4c835fc5b1410f627b04fb702da09bd1cd36839d5b14f4e53e35c24b383e7b86\",\"dweb:/ipfs/QmRngwrEJeDhx69nGuoYj4Gx8tXgJSRgfKrAXiWC7bZYxA\"]}},\"version\":1}",
+    "bytecode": "60808060405234602757600180546001600160a01b03191633179055610bcc908161002c8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c9081632c70120e14610757575080634768d4ef146106b65780637dc0d1d01461068e5780638a2954fd14610636578063d179277d146104b95763fad54f3a1461005e575f80fd5b346104b55760603660031901126104b55760043567ffffffffffffffff81116104b55761008f903690600401610a59565b60243567ffffffffffffffff81116104b5576100af903690600401610a59565b906100c560018060a01b03600154163314610aaf565b604051906100d28261097b565b815260208101918252604051916100ea604084610997565b60038352620302d360ec1b602084015260408201928352606082015f8152608083019160443583525f54680100000000000000008110156103125780600161013492015f556108f7565b9490946104a2575180519067ffffffffffffffff821161031257819061015a8754610943565b601f8111610452575b50602090601f83116001146103ef575f926103e4575b50508160011b915f199060031b1c19161784555b518051600185019167ffffffffffffffff82116103125781906101b08454610943565b601f8111610394575b50602090601f8311600114610331575f92610326575b50508160011b915f199060031b1c19161790555b6002830193519384519467ffffffffffffffff8611610312576102068254610943565b601f81116102cd575b50602090601f871160011461026757958091600496975f9261025c575b50508160011b915f199060031b1c19161790555b600384019051151560ff80198354169116179055519101555f80f35b015190505f8061022c565b90601f19871691835f52815f20925f5b8181106102b557509160019391896004999a941061029d575b505050811b019055610240565b01515f1960f88460031b161c191690555f8080610290565b92936020600181928786015181550195019301610277565b825f5260205f20601f880160051c81019160208910610308575b601f0160051c01905b8181106102fd575061020f565b5f81556001016102f0565b90915081906102e7565b634e487b7160e01b5f52604160045260245ffd5b015190505f806101cf565b5f8581528281209350601f198516905b81811061037c5750908460019594939210610364575b505050811b0190556101e3565b01515f1960f88460031b161c191690555f8080610357565b92936020600181928786015181550195019301610341565b909150835f5260205f20601f840160051c810191602085106103da575b90601f859493920160051c01905b8181106103cc57506101b9565b5f81558493506001016103bf565b90915081906103b1565b015190505f80610179565b5f8881528281209350601f198516905b81811061043a5750908460019594939210610422575b505050811b01845561018d565b01515f1960f88460031b161c191690555f8080610415565b929360206001819287860151815501950193016103ff565b909150865f5260205f20601f840160051c81019160208510610498575b90601f859493920160051c01905b81811061048a5750610163565b5f815584935060010161047d565b909150819061046f565b634e487b7160e01b5f525f60045260245ffd5b5f80fd5b346104b55760403660031901126104b55760043560243567ffffffffffffffff81116104b5576105336104f26002923690600401610a59565b9261050860018060a01b03600154163314610aaf565b6105145f548210610b07565b61052e60ff6003610524846108f7565b5001541615610b4a565b6108f7565b5001815167ffffffffffffffff8111610312576105508254610943565b601f81116105f1575b50602092601f821160011461059557928192935f9261058a575b50505f19600383901b1c191660019190911b179055005b015190508380610573565b601f19821693835f52805f20915f5b8681106105d957508360019596106105c1575b505050811b019055005b01515f1960f88460031b161c191690558380806105b7565b919260206001819286850151815501940192016105a4565b825f5260205f20601f830160051c8101916020841061062c575b601f0160051c01905b8181106106215750610559565b5f8155600101610614565b909150819061060b565b346104b55760203660031901126104b557600361067f60043561066460018060a01b03600154163314610aaf565b6106705f548210610b07565b61052e60ff84610524846108f7565b5001805460ff19166001179055005b346104b5575f3660031901126104b5576001546040516001600160a01b039091168152602090f35b346104b55760203660031901126104b5576004355f548110156104b5576106df61072a916108f7565b506106e9816109b9565b906106f6600182016109b9565b610746610705600284016109b9565b610738600460ff6003870154169501549360405197889760a0895260a08901906108d3565b9087820360208901526108d3565b9085820360408701526108d3565b911515606084015260808301520390f35b346104b5575f3660031901126104b5575f5467ffffffffffffffff81116103125761078860208260051b0183610997565b8082526020820190815f80527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5635f915b83831061086e57848660405191829160208301906020845251809152604083019060408160051b85010192915f905b8282106107f657505050500390f35b919360019193955060208091603f1989820301855287519060808061084c61083a61082a865160a0875260a08701906108d3565b87870151868203898801526108d3565b604086015185820360408701526108d3565b93606081015115156060850152015191015296019201920185949391926107e7565b600560206001926040516108818161097b565b61088a866109b9565b81526108978587016109b9565b838201526108a7600287016109b9565b604082015260ff60038701541615156060820152600486015460808201528152019201920191906107b8565b805180835260209291819084018484015e5f828201840152601f01601f1916010190565b5f5481101561092f575f8080526005919091027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630191565b634e487b7160e01b5f52603260045260245ffd5b90600182811c92168015610971575b602083101461095d57565b634e487b7160e01b5f52602260045260245ffd5b91607f1691610952565b60a0810190811067ffffffffffffffff82111761031257604052565b90601f8019910116810190811067ffffffffffffffff82111761031257604052565b9060405191825f8254926109cc84610943565b8084529360018116908115610a3757506001146109f3575b506109f192500383610997565b565b90505f9291925260205f20905f915b818310610a1b5750509060206109f1928201015f6109e4565b6020919350806001915483858901015201910190918492610a02565b9050602092506109f194915060ff191682840152151560051b8201015f6109e4565b81601f820112156104b55780359067ffffffffffffffff82116103125760405192610a8e601f8401601f191660200185610997565b828452602083830101116104b557815f926020809301838601378301015290565b15610ab657565b60405162461bcd60e51b815260206004820152602360248201527f4f6e6c79206f7261636c652063616e20706572666f726d20746869732061637460448201526234b7b760e91b6064820152608490fd5b15610b0e57565b60405162461bcd60e51b815260206004820152601460248201527313585d18da08191bd95cc81b9bdd08195e1a5cdd60621b6044820152606490fd5b15610b5157565b60405162461bcd60e51b815260206004820152601960248201527f4d6174636820697320616c72656164792066696e6973686564000000000000006044820152606490fdfea2646970667358221220c36546a3b2cdda9e9db326b7ec1fb96ddae03c891dc5323f34951ceea4161e0864736f6c634300081c0033",
+    "deployedBytecode": "6080806040526004361015610012575f80fd5b5f3560e01c9081632c70120e14610757575080634768d4ef146106b65780637dc0d1d01461068e5780638a2954fd14610636578063d179277d146104b95763fad54f3a1461005e575f80fd5b346104b55760603660031901126104b55760043567ffffffffffffffff81116104b55761008f903690600401610a59565b60243567ffffffffffffffff81116104b5576100af903690600401610a59565b906100c560018060a01b03600154163314610aaf565b604051906100d28261097b565b815260208101918252604051916100ea604084610997565b60038352620302d360ec1b602084015260408201928352606082015f8152608083019160443583525f54680100000000000000008110156103125780600161013492015f556108f7565b9490946104a2575180519067ffffffffffffffff821161031257819061015a8754610943565b601f8111610452575b50602090601f83116001146103ef575f926103e4575b50508160011b915f199060031b1c19161784555b518051600185019167ffffffffffffffff82116103125781906101b08454610943565b601f8111610394575b50602090601f8311600114610331575f92610326575b50508160011b915f199060031b1c19161790555b6002830193519384519467ffffffffffffffff8611610312576102068254610943565b601f81116102cd575b50602090601f871160011461026757958091600496975f9261025c575b50508160011b915f199060031b1c19161790555b600384019051151560ff80198354169116179055519101555f80f35b015190505f8061022c565b90601f19871691835f52815f20925f5b8181106102b557509160019391896004999a941061029d575b505050811b019055610240565b01515f1960f88460031b161c191690555f8080610290565b92936020600181928786015181550195019301610277565b825f5260205f20601f880160051c81019160208910610308575b601f0160051c01905b8181106102fd575061020f565b5f81556001016102f0565b90915081906102e7565b634e487b7160e01b5f52604160045260245ffd5b015190505f806101cf565b5f8581528281209350601f198516905b81811061037c5750908460019594939210610364575b505050811b0190556101e3565b01515f1960f88460031b161c191690555f8080610357565b92936020600181928786015181550195019301610341565b909150835f5260205f20601f840160051c810191602085106103da575b90601f859493920160051c01905b8181106103cc57506101b9565b5f81558493506001016103bf565b90915081906103b1565b015190505f80610179565b5f8881528281209350601f198516905b81811061043a5750908460019594939210610422575b505050811b01845561018d565b01515f1960f88460031b161c191690555f8080610415565b929360206001819287860151815501950193016103ff565b909150865f5260205f20601f840160051c81019160208510610498575b90601f859493920160051c01905b81811061048a5750610163565b5f815584935060010161047d565b909150819061046f565b634e487b7160e01b5f525f60045260245ffd5b5f80fd5b346104b55760403660031901126104b55760043560243567ffffffffffffffff81116104b5576105336104f26002923690600401610a59565b9261050860018060a01b03600154163314610aaf565b6105145f548210610b07565b61052e60ff6003610524846108f7565b5001541615610b4a565b6108f7565b5001815167ffffffffffffffff8111610312576105508254610943565b601f81116105f1575b50602092601f821160011461059557928192935f9261058a575b50505f19600383901b1c191660019190911b179055005b015190508380610573565b601f19821693835f52805f20915f5b8681106105d957508360019596106105c1575b505050811b019055005b01515f1960f88460031b161c191690558380806105b7565b919260206001819286850151815501940192016105a4565b825f5260205f20601f830160051c8101916020841061062c575b601f0160051c01905b8181106106215750610559565b5f8155600101610614565b909150819061060b565b346104b55760203660031901126104b557600361067f60043561066460018060a01b03600154163314610aaf565b6106705f548210610b07565b61052e60ff84610524846108f7565b5001805460ff19166001179055005b346104b5575f3660031901126104b5576001546040516001600160a01b039091168152602090f35b346104b55760203660031901126104b5576004355f548110156104b5576106df61072a916108f7565b506106e9816109b9565b906106f6600182016109b9565b610746610705600284016109b9565b610738600460ff6003870154169501549360405197889760a0895260a08901906108d3565b9087820360208901526108d3565b9085820360408701526108d3565b911515606084015260808301520390f35b346104b5575f3660031901126104b5575f5467ffffffffffffffff81116103125761078860208260051b0183610997565b8082526020820190815f80527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5635f915b83831061086e57848660405191829160208301906020845251809152604083019060408160051b85010192915f905b8282106107f657505050500390f35b919360019193955060208091603f1989820301855287519060808061084c61083a61082a865160a0875260a08701906108d3565b87870151868203898801526108d3565b604086015185820360408701526108d3565b93606081015115156060850152015191015296019201920185949391926107e7565b600560206001926040516108818161097b565b61088a866109b9565b81526108978587016109b9565b838201526108a7600287016109b9565b604082015260ff60038701541615156060820152600486015460808201528152019201920191906107b8565b805180835260209291819084018484015e5f828201840152601f01601f1916010190565b5f5481101561092f575f8080526005919091027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630191565b634e487b7160e01b5f52603260045260245ffd5b90600182811c92168015610971575b602083101461095d57565b634e487b7160e01b5f52602260045260245ffd5b91607f1691610952565b60a0810190811067ffffffffffffffff82111761031257604052565b90601f8019910116810190811067ffffffffffffffff82111761031257604052565b9060405191825f8254926109cc84610943565b8084529360018116908115610a3757506001146109f3575b506109f192500383610997565b565b90505f9291925260205f20905f915b818310610a1b5750509060206109f1928201015f6109e4565b6020919350806001915483858901015201910190918492610a02565b9050602092506109f194915060ff191682840152151560051b8201015f6109e4565b81601f820112156104b55780359067ffffffffffffffff82116103125760405192610a8e601f8401601f191660200185610997565b828452602083830101116104b557815f926020809301838601378301015290565b15610ab657565b60405162461bcd60e51b815260206004820152602360248201527f4f6e6c79206f7261636c652063616e20706572666f726d20746869732061637460448201526234b7b760e91b6064820152608490fd5b15610b0e57565b60405162461bcd60e51b815260206004820152601460248201527313585d18da08191bd95cc81b9bdd08195e1a5cdd60621b6044820152606490fd5b15610b5157565b60405162461bcd60e51b815260206004820152601960248201527f4d6174636820697320616c72656164792066696e6973686564000000000000006044820152606490fdfea2646970667358221220c36546a3b2cdda9e9db326b7ec1fb96ddae03c891dc5323f34951ceea4161e0864736f6c634300081c0033",
+    "sourceMap": "62:1332:0:-:0;;;;;;;;;;-1:-1:-1;;;;;;62:1332:0;334:10;62:1332;;;;;;;;;;;;;",
+    "deployedSourceMap": "62:1332:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;:::i;:::-;;393:68;62:1332;;;;;;;;401:10;:20;393:68;:::i;:::-;62:1332;;;;;;:::i;:::-;;;;620:48;;62:1332;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;62:1332:0;;;;;620:48;;62:1332;;;;620:48;;62:1332;;;620:48;;;62:1332;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;;;;;;;;;938:14;62:1332;938:20;62:1332;;;;;;:::i;:::-;;393:68;62:1332;;;;;;;;401:10;:20;393:68;:::i;:::-;787:55;62:1332;;795:22;;787:55;:::i;:::-;857:64;62:1332;866:25;:14;;;:::i;:::-;:25;;62:1332;;865:26;857:64;:::i;:::-;938:14;:::i;:::-;:20;;62:1332;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;866:25:0;62:1332;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;;866:25;62:1332;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;1144:25;1216:14;62:1332;;393:68;62:1332;;;;;;;;401:10;:20;393:68;:::i;:::-;1065:55;62:1332;;1073:22;;1065:55;:::i;:::-;1135:64;62:1332;1144:14;;;;:::i;1216:::-;-1:-1:-1;1216:25:0;62:1332;;-1:-1:-1;;62:1332:0;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;;;;-1:-1:-1;;;;;62:1332:0;;;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;;;;237:22;;;;;;62:1332;237:22;;:::i;:::-;;;;;:::i;:::-;;;62:1332;237:22;;;:::i;:::-;62:1332;237:22;;;;;:::i;:::-;62:1332;;;237:22;;;62:1332;;237:22;;62:1332;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;-1:-1:-1;;62:1332:0;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;62:1332:0;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:::o;:::-;;;-1:-1:-1;62:1332:0;;;;;-1:-1:-1;62:1332:0;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;62:1332:0;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;62:1332:0;;;;;;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;;;;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;62:1332:0;;;;;;;;;;;;;;;;;;;",
+    "sourcePath": "c:/Users/Egemen/Documents/GitHub/egepoly-hub/contracts/FootballData.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.28+commit.7893614a"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/Egemen/Documents/GitHub/egepoly-hub/contracts/FootballData.sol",
+        "exportedSymbols": {
+            "FootballData": [
+                140
+            ]
+        },
+        "id": 141,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".27"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "34:24:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "FootballData",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 140,
+                "linearizedBaseContracts": [
+                    140
+                ],
+                "name": "FootballData",
+                "nameLocation": "71:12:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "canonicalName": "FootballData.Match",
+                        "id": 12,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 3,
+                                "mutability": "mutable",
+                                "name": "homeTeam",
+                                "nameLocation": "118:8:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 12,
+                                "src": "111:15:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 2,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "111:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 5,
+                                "mutability": "mutable",
+                                "name": "awayTeam",
+                                "nameLocation": "140:8:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 12,
+                                "src": "133:15:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 4,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "133:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 7,
+                                "mutability": "mutable",
+                                "name": "score",
+                                "nameLocation": "162:5:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 12,
+                                "src": "155:12:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 6,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "155:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 9,
+                                "mutability": "mutable",
+                                "name": "isFinished",
+                                "nameLocation": "179:10:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 12,
+                                "src": "174:15:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                },
+                                "typeName": {
+                                    "id": 8,
+                                    "name": "bool",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "174:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 11,
+                                "mutability": "mutable",
+                                "name": "endTime",
+                                "nameLocation": "204:7:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 12,
+                                "src": "196:15:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 10,
+                                    "name": "uint256",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "196:7:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "Match",
+                        "nameLocation": "99:5:0",
+                        "nodeType": "StructDefinition",
+                        "scope": 140,
+                        "src": "92:127:0",
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "4768d4ef",
+                        "id": 16,
+                        "mutability": "mutable",
+                        "name": "matches",
+                        "nameLocation": "252:7:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 140,
+                        "src": "237:22:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                            "typeString": "struct FootballData.Match[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "id": 14,
+                                "nodeType": "UserDefinedTypeName",
+                                "pathNode": {
+                                    "id": 13,
+                                    "name": "Match",
+                                    "nameLocations": [
+                                        "237:5:0"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 12,
+                                    "src": "237:5:0"
+                                },
+                                "referencedDeclaration": 12,
+                                "src": "237:5:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Match_$12_storage_ptr",
+                                    "typeString": "struct FootballData.Match"
+                                }
+                            },
+                            "id": 15,
+                            "nodeType": "ArrayTypeName",
+                            "src": "237:7:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage_ptr",
+                                "typeString": "struct FootballData.Match[]"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "7dc0d1d0",
+                        "id": 18,
+                        "mutability": "mutable",
+                        "name": "oracle",
+                        "nameLocation": "281:6:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 140,
+                        "src": "266:21:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                        },
+                        "typeName": {
+                            "id": 17,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "266:7:0",
+                            "stateMutability": "nonpayable",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 26,
+                            "nodeType": "Block",
+                            "src": "314:38:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 24,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 21,
+                                            "name": "oracle",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 18,
+                                            "src": "325:6:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 22,
+                                                "name": "msg",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4294967281,
+                                                "src": "334:3:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_magic_message",
+                                                    "typeString": "msg"
+                                                }
+                                            },
+                                            "id": 23,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "338:6:0",
+                                            "memberName": "sender",
+                                            "nodeType": "MemberAccess",
+                                            "src": "334:10:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "325:19:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 25,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "325:19:0"
+                                }
+                            ]
+                        },
+                        "id": 27,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nameLocation": "-1:-1:-1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 19,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "311:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 20,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "314:0:0"
+                        },
+                        "scope": 140,
+                        "src": "300:52:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 38,
+                            "nodeType": "Block",
+                            "src": "382:99:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                "id": 33,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "expression": {
+                                                        "id": 30,
+                                                        "name": "msg",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 4294967281,
+                                                        "src": "401:3:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_magic_message",
+                                                            "typeString": "msg"
+                                                        }
+                                                    },
+                                                    "id": 31,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "405:6:0",
+                                                    "memberName": "sender",
+                                                    "nodeType": "MemberAccess",
+                                                    "src": "401:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_address",
+                                                        "typeString": "address"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "==",
+                                                "rightExpression": {
+                                                    "id": 32,
+                                                    "name": "oracle",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 18,
+                                                    "src": "415:6:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_address",
+                                                        "typeString": "address"
+                                                    }
+                                                },
+                                                "src": "401:20:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4f6e6c79206f7261636c652063616e20706572666f726d207468697320616374696f6e",
+                                                "id": 34,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "423:37:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_d90ef5c1a68dcf13e7c801983faf25d34b4817ce282bc6d7cdefa33956686316",
+                                                    "typeString": "literal_string \"Only oracle can perform this action\""
+                                                },
+                                                "value": "Only oracle can perform this action"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_d90ef5c1a68dcf13e7c801983faf25d34b4817ce282bc6d7cdefa33956686316",
+                                                    "typeString": "literal_string \"Only oracle can perform this action\""
+                                                }
+                                            ],
+                                            "id": 29,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "393:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 35,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "393:68:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 36,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "393:68:0"
+                                },
+                                {
+                                    "id": 37,
+                                    "nodeType": "PlaceholderStatement",
+                                    "src": "472:1:0"
+                                }
+                            ]
+                        },
+                        "id": 39,
+                        "name": "onlyOracle",
+                        "nameLocation": "369:10:0",
+                        "nodeType": "ModifierDefinition",
+                        "parameters": {
+                            "id": 28,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "379:2:0"
+                        },
+                        "src": "360:121:0",
+                        "virtual": false,
+                        "visibility": "internal"
+                    },
+                    {
+                        "body": {
+                            "id": 62,
+                            "nodeType": "Block",
+                            "src": "592:89:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "arguments": [
+                                                    {
+                                                        "id": 54,
+                                                        "name": "homeTeam",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 41,
+                                                        "src": "626:8:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 55,
+                                                        "name": "awayTeam",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 43,
+                                                        "src": "636:8:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    },
+                                                    {
+                                                        "hexValue": "302d30",
+                                                        "id": 56,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "string",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "646:5:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_stringliteral_1ecd6683a411a396ba5f36a730134b7ce861dfefd7e1fd4cf47b69dd1cdab0b2",
+                                                            "typeString": "literal_string \"0-0\""
+                                                        },
+                                                        "value": "0-0"
+                                                    },
+                                                    {
+                                                        "hexValue": "66616c7365",
+                                                        "id": 57,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "bool",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "653:5:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_bool",
+                                                            "typeString": "bool"
+                                                        },
+                                                        "value": "false"
+                                                    },
+                                                    {
+                                                        "id": 58,
+                                                        "name": "endTime",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 45,
+                                                        "src": "660:7:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_stringliteral_1ecd6683a411a396ba5f36a730134b7ce861dfefd7e1fd4cf47b69dd1cdab0b2",
+                                                            "typeString": "literal_string \"0-0\""
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_bool",
+                                                            "typeString": "bool"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    ],
+                                                    "id": 53,
+                                                    "name": "Match",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 12,
+                                                    "src": "620:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_struct$_Match_$12_storage_ptr_$",
+                                                        "typeString": "type(struct FootballData.Match storage pointer)"
+                                                    }
+                                                },
+                                                "id": 59,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "structConstructorCall",
+                                                "lValueRequested": false,
+                                                "nameLocations": [],
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "620:48:0",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Match_$12_memory_ptr",
+                                                    "typeString": "struct FootballData.Match memory"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_struct$_Match_$12_memory_ptr",
+                                                    "typeString": "struct FootballData.Match memory"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 50,
+                                                "name": "matches",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 16,
+                                                "src": "607:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                    "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                }
+                                            },
+                                            "id": 52,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "615:4:0",
+                                            "memberName": "push",
+                                            "nodeType": "MemberAccess",
+                                            "src": "607:12:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Match_$12_storage_$dyn_storage_ptr_$_t_struct$_Match_$12_storage_$returns$__$attached_to$_t_array$_t_struct$_Match_$12_storage_$dyn_storage_ptr_$",
+                                                "typeString": "function (struct FootballData.Match storage ref[] storage pointer,struct FootballData.Match storage ref)"
+                                            }
+                                        },
+                                        "id": 60,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "607:62:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 61,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "607:62:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "fad54f3a",
+                        "id": 63,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 48,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 47,
+                                    "name": "onlyOracle",
+                                    "nameLocations": [
+                                        "582:10:0"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 39,
+                                    "src": "582:10:0"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "582:10:0"
+                            }
+                        ],
+                        "name": "addMatch",
+                        "nameLocation": "502:8:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 46,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 41,
+                                    "mutability": "mutable",
+                                    "name": "homeTeam",
+                                    "nameLocation": "525:8:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 63,
+                                    "src": "511:22:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 40,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "511:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 43,
+                                    "mutability": "mutable",
+                                    "name": "awayTeam",
+                                    "nameLocation": "548:8:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 63,
+                                    "src": "534:22:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 42,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "534:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 45,
+                                    "mutability": "mutable",
+                                    "name": "endTime",
+                                    "nameLocation": "566:7:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 63,
+                                    "src": "558:15:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 44,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "558:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "510:64:0"
+                        },
+                        "returnParameters": {
+                            "id": 49,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "592:0:0"
+                        },
+                        "scope": 140,
+                        "src": "493:188:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 96,
+                            "nodeType": "Block",
+                            "src": "772:209:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 76,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "id": 73,
+                                                    "name": "index",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 65,
+                                                    "src": "795:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "<",
+                                                "rightExpression": {
+                                                    "expression": {
+                                                        "id": 74,
+                                                        "name": "matches",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 16,
+                                                        "src": "803:7:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                            "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                        }
+                                                    },
+                                                    "id": 75,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "811:6:0",
+                                                    "memberName": "length",
+                                                    "nodeType": "MemberAccess",
+                                                    "src": "803:14:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "795:22:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4d6174636820646f6573206e6f74206578697374",
+                                                "id": 77,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "819:22:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_3dcc09a458487c32849f81c33ccdd6d96a445a2c86eddb0b98e00a01214eaedb",
+                                                    "typeString": "literal_string \"Match does not exist\""
+                                                },
+                                                "value": "Match does not exist"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_3dcc09a458487c32849f81c33ccdd6d96a445a2c86eddb0b98e00a01214eaedb",
+                                                    "typeString": "literal_string \"Match does not exist\""
+                                                }
+                                            ],
+                                            "id": 72,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "787:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 78,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "787:55:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 79,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "787:55:0"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 85,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "UnaryOperation",
+                                                "operator": "!",
+                                                "prefix": true,
+                                                "src": "865:26:0",
+                                                "subExpression": {
+                                                    "expression": {
+                                                        "baseExpression": {
+                                                            "id": 81,
+                                                            "name": "matches",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 16,
+                                                            "src": "866:7:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                                "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 83,
+                                                        "indexExpression": {
+                                                            "id": 82,
+                                                            "name": "index",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 65,
+                                                            "src": "874:5:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "866:14:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_Match_$12_storage",
+                                                            "typeString": "struct FootballData.Match storage ref"
+                                                        }
+                                                    },
+                                                    "id": 84,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "881:10:0",
+                                                    "memberName": "isFinished",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 9,
+                                                    "src": "866:25:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4d6174636820697320616c72656164792066696e6973686564",
+                                                "id": 86,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "893:27:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_64b9ca2885ddff53baa26491bd00fca7a7de89afdc1db93c4b34d400e5324ff8",
+                                                    "typeString": "literal_string \"Match is already finished\""
+                                                },
+                                                "value": "Match is already finished"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_64b9ca2885ddff53baa26491bd00fca7a7de89afdc1db93c4b34d400e5324ff8",
+                                                    "typeString": "literal_string \"Match is already finished\""
+                                                }
+                                            ],
+                                            "id": 80,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "857:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 87,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "857:64:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 88,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "857:64:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 94,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 89,
+                                                    "name": "matches",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 16,
+                                                    "src": "938:7:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                        "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 91,
+                                                "indexExpression": {
+                                                    "id": 90,
+                                                    "name": "index",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 65,
+                                                    "src": "946:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "938:14:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Match_$12_storage",
+                                                    "typeString": "struct FootballData.Match storage ref"
+                                                }
+                                            },
+                                            "id": 92,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "953:5:0",
+                                            "memberName": "score",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "938:20:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_storage",
+                                                "typeString": "string storage ref"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "id": 93,
+                                            "name": "newScore",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 67,
+                                            "src": "961:8:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string memory"
+                                            }
+                                        },
+                                        "src": "938:31:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage",
+                                            "typeString": "string storage ref"
+                                        }
+                                    },
+                                    "id": 95,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "938:31:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "d179277d",
+                        "id": 97,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 70,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 69,
+                                    "name": "onlyOracle",
+                                    "nameLocations": [
+                                        "762:10:0"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 39,
+                                    "src": "762:10:0"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "762:10:0"
+                            }
+                        ],
+                        "name": "updateScore",
+                        "nameLocation": "704:11:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 68,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 65,
+                                    "mutability": "mutable",
+                                    "name": "index",
+                                    "nameLocation": "724:5:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 97,
+                                    "src": "716:13:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 64,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "716:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 67,
+                                    "mutability": "mutable",
+                                    "name": "newScore",
+                                    "nameLocation": "745:8:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 97,
+                                    "src": "731:22:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 66,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "731:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "715:39:0"
+                        },
+                        "returnParameters": {
+                            "id": 71,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "772:0:0"
+                        },
+                        "scope": 140,
+                        "src": "695:286:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 128,
+                            "nodeType": "Block",
+                            "src": "1050:212:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 108,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "id": 105,
+                                                    "name": "index",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 99,
+                                                    "src": "1073:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "<",
+                                                "rightExpression": {
+                                                    "expression": {
+                                                        "id": 106,
+                                                        "name": "matches",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 16,
+                                                        "src": "1081:7:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                            "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                        }
+                                                    },
+                                                    "id": 107,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "1089:6:0",
+                                                    "memberName": "length",
+                                                    "nodeType": "MemberAccess",
+                                                    "src": "1081:14:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "1073:22:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4d6174636820646f6573206e6f74206578697374",
+                                                "id": 109,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1097:22:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_3dcc09a458487c32849f81c33ccdd6d96a445a2c86eddb0b98e00a01214eaedb",
+                                                    "typeString": "literal_string \"Match does not exist\""
+                                                },
+                                                "value": "Match does not exist"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_3dcc09a458487c32849f81c33ccdd6d96a445a2c86eddb0b98e00a01214eaedb",
+                                                    "typeString": "literal_string \"Match does not exist\""
+                                                }
+                                            ],
+                                            "id": 104,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "1065:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 110,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1065:55:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 111,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1065:55:0"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 117,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "UnaryOperation",
+                                                "operator": "!",
+                                                "prefix": true,
+                                                "src": "1143:26:0",
+                                                "subExpression": {
+                                                    "expression": {
+                                                        "baseExpression": {
+                                                            "id": 113,
+                                                            "name": "matches",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 16,
+                                                            "src": "1144:7:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                                "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 115,
+                                                        "indexExpression": {
+                                                            "id": 114,
+                                                            "name": "index",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 99,
+                                                            "src": "1152:5:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "1144:14:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_Match_$12_storage",
+                                                            "typeString": "struct FootballData.Match storage ref"
+                                                        }
+                                                    },
+                                                    "id": 116,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "1159:10:0",
+                                                    "memberName": "isFinished",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 9,
+                                                    "src": "1144:25:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4d6174636820697320616c72656164792066696e6973686564",
+                                                "id": 118,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1171:27:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_64b9ca2885ddff53baa26491bd00fca7a7de89afdc1db93c4b34d400e5324ff8",
+                                                    "typeString": "literal_string \"Match is already finished\""
+                                                },
+                                                "value": "Match is already finished"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_64b9ca2885ddff53baa26491bd00fca7a7de89afdc1db93c4b34d400e5324ff8",
+                                                    "typeString": "literal_string \"Match is already finished\""
+                                                }
+                                            ],
+                                            "id": 112,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "1135:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 119,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1135:64:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 120,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1135:64:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 126,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 121,
+                                                    "name": "matches",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 16,
+                                                    "src": "1216:7:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                                        "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 123,
+                                                "indexExpression": {
+                                                    "id": 122,
+                                                    "name": "index",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 99,
+                                                    "src": "1224:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "1216:14:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Match_$12_storage",
+                                                    "typeString": "struct FootballData.Match storage ref"
+                                                }
+                                            },
+                                            "id": 124,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "1231:10:0",
+                                            "memberName": "isFinished",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 9,
+                                            "src": "1216:25:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "hexValue": "74727565",
+                                            "id": 125,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "bool",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1244:4:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            },
+                                            "value": "true"
+                                        },
+                                        "src": "1216:32:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 127,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1216:32:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "8a2954fd",
+                        "id": 129,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 102,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 101,
+                                    "name": "onlyOracle",
+                                    "nameLocations": [
+                                        "1040:10:0"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 39,
+                                    "src": "1040:10:0"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "1040:10:0"
+                            }
+                        ],
+                        "name": "finishMatches",
+                        "nameLocation": "1004:13:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 100,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 99,
+                                    "mutability": "mutable",
+                                    "name": "index",
+                                    "nameLocation": "1026:5:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 129,
+                                    "src": "1018:13:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 98,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1018:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1017:15:0"
+                        },
+                        "returnParameters": {
+                            "id": 103,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1050:0:0"
+                        },
+                        "scope": 140,
+                        "src": "995:267:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 138,
+                            "nodeType": "Block",
+                            "src": "1333:41:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 136,
+                                        "name": "matches",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 16,
+                                        "src": "1355:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage",
+                                            "typeString": "struct FootballData.Match storage ref[] storage ref"
+                                        }
+                                    },
+                                    "functionReturnParameters": 135,
+                                    "id": 137,
+                                    "nodeType": "Return",
+                                    "src": "1348:14:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "2c70120e",
+                        "id": 139,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "getMatches",
+                        "nameLocation": "1285:10:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 130,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1295:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 135,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 134,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 139,
+                                    "src": "1318:14:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_struct$_Match_$12_memory_ptr_$dyn_memory_ptr",
+                                        "typeString": "struct FootballData.Match[]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 132,
+                                            "nodeType": "UserDefinedTypeName",
+                                            "pathNode": {
+                                                "id": 131,
+                                                "name": "Match",
+                                                "nameLocations": [
+                                                    "1318:5:0"
+                                                ],
+                                                "nodeType": "IdentifierPath",
+                                                "referencedDeclaration": 12,
+                                                "src": "1318:5:0"
+                                            },
+                                            "referencedDeclaration": 12,
+                                            "src": "1318:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_struct$_Match_$12_storage_ptr",
+                                                "typeString": "struct FootballData.Match"
+                                            }
+                                        },
+                                        "id": 133,
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "1318:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_struct$_Match_$12_storage_$dyn_storage_ptr",
+                                            "typeString": "struct FootballData.Match[]"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1317:16:0"
+                        },
+                        "scope": 140,
+                        "src": "1276:98:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 141,
+                "src": "62:1332:0",
+                "usedErrors": [],
+                "usedEvents": []
+            }
+        ],
+        "src": "34:1360:0"
+    },
+    "functionHashes": {
+        "addMatch(string,string,uint256)": "fad54f3a",
+        "finishMatches(uint256)": "8a2954fd",
+        "getMatches()": "2c70120e",
+        "matches(uint256)": "4768d4ef",
+        "oracle()": "7dc0d1d0",
+        "updateScore(uint256,string)": "d179277d"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "604000",
+            "executionCost": "24881",
+            "totalCost": "628881"
+        },
+        "external": {
+            "addMatch(string,string,uint256)": "infinite",
+            "finishMatches(uint256)": "infinite",
+            "getMatches()": "infinite",
+            "matches(uint256)": "infinite",
+            "oracle()": "2324",
+            "updateScore(uint256,string)": "infinite"
+        }
+    }
+}
