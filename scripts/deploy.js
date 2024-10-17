@@ -8,8 +8,7 @@ async function main() {
     // Kontratı dağıt
     const footballData = await FootballData.deploy();
 
-    // Dağıtım işlemini bekle
-    await footballData.deployed();
+
 
     console.log('FootballData adres:', footballData.address);
 }
