@@ -18,6 +18,7 @@
     "@nomicfoundation/edr": "^0.6.2",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
     "web3": "^4.13.0"
   }
 }

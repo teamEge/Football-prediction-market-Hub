@@ -8,10 +8,6 @@ async function main() {
     // Kontratı dağıt
     const footballData = await FootballData.deploy();
 
-    // Dağıtım işleminin tamamlanmasını bekle
-    await footballData.deployed();
-
-    // Başarılı bir dağıtım sonrası adresi yazdır
     console.log('FootballData adres:', footballData.address);
 }
 
@@ -19,6 +15,6 @@ async function main() {
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error("Hata:", error); // Daha ayrıntılı hata çıktısı
+        console.error(error);
         process.exit(1);
     });
