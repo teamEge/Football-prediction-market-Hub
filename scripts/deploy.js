@@ -2,23 +2,19 @@ const { ethers } = require('hardhat');
 require('dotenv').config();
 
 async function main() {
-    // FootballData kontratını oluştur
     const FootballData = await ethers.getContractFactory('FootballData');
 
-    console.log('Kontrat deploy ediliyor...');
+    console.log('Deploying contract...');
 
-    // Kontratı dağıt
     const footballData = await FootballData.deploy();
 
-    // Dağıtım tamamlandıktan sonra, kontratın adresini yazdır
-    await footballData.waitForDeployment(); // Burada yeni yöntem kullanılıyor
-    console.log('FootballData kontratı başarıyla dağıtıldı. Adresi:', footballData.target);
+    await footballData.waitForDeployment();
+    console.log('FootballData contract deployed successfully. Address:', footballData.target);
 }
 
-// Ana işlemi çalıştır
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error('Ana işlem sırasında hata:', error);
+        console.error('Error during main execution:', error);
         process.exit(1);
     });
