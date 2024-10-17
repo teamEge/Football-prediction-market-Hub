@@ -12,8 +12,13 @@ async function fetchMatchData() {
             }
         });
         const matchData = response.data;
+        console.log('MatchData', matchData);
+
+        return matchData;
 
     } catch (error) {
-        
+        console.error('PullDataError',error);  
     }
 }
+
+module.exports = { fetchMatchData };
