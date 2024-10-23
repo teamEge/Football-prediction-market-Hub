@@ -68,14 +68,16 @@ async function addMatchToContract(homeTeam, awayTeam, score, endTime) {
 async function updateContractWithMatchDetails() {
     const matches = await fetchMatchDetails();
 
+    // Tüm maç skorlarını paralel olarak çek
+    const scoresPromises = matches.map(match => fetchMatchScore(match.id));
+    const scores = await Promise.all(scoresPromises);
+
     for (let i = 0; i < matches.length; i++) {
         const match = matches[i];
         const homeTeam = match.homeTeam.name;
         const awayTeam = match.awayTeam.name;
         const endTime = Math.floor(new Date(match.utcDate).getTime() / 1000); // Unix timestamp
-
-        // Maç skorunu ayrı olarak çek
-        const { homeScore, awayScore } = await fetchMatchScore(match.id);
+        const { homeScore, awayScore } = scores[i];
         const score = `${homeScore}-${awayScore}`;
 
         try {
@@ -87,7 +89,8 @@ async function updateContractWithMatchDetails() {
     }
 }
 
-// Her 30 saniyede bir çalışacak şekilde ayarlandı
+
+// Her 2 dakikada bir çalışacak şekilde ayarlandı
 setInterval(async () => {
     console.log('Updating contract with match details...');
     try {
@@ -95,7 +98,7 @@ setInterval(async () => {
     } catch (error) {
         console.error('Error in interval update:', error);
     }
-}, 30000); // 30 saniye
+}, 120000 ); // 2 dakika
 
 // İlk çalıştırma
 updateContractWithMatchDetails().catch((error) => {
