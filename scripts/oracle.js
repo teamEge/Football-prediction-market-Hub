@@ -13,8 +13,7 @@ const provider = new ethers.providers.JsonRpcProvider(infuraUrl);
 const wallet = new ethers.Wallet(privateKey, provider);
 const contract = new ethers.Contract(contractAddress, FootballDataABI, wallet);
 
-// Sadece Şampiyonlar Ligi için ayarlandı.
-const competitionId = 2001; // UEFA Şampiyonlar Ligi'nin ID'si.
+const competitionId = 2001;
 
 async function fetchMatchDetails() {
     const matches = [];
@@ -47,11 +46,12 @@ async function fetchMatchScore(matchId) {
         const score = response.data.score;
         return {
             homeScore: score.fullTime.home !== null ? score.fullTime.home : 'N/A',
-            awayScore: score.fullTime.away !== null ? score.fullTime.away : 'N/A'
+            awayScore: score.fullTime.away !== null ? score.fullTime.away : 'N/A',
+            status: response.data.status // Maç durumunu ekle
         };
     } catch (error) {
         console.error(`Error fetching match score for match ID ${matchId}:`, error.message);
-        return { homeScore: 'N/A', awayScore: 'N/A' };
+        return { homeScore: 'N/A', awayScore: 'N/A', status: 'N/A' };
     }
 }
 
@@ -65,10 +65,18 @@ async function addMatchToContract(homeTeam, awayTeam, score, endTime) {
     }
 }
 
+async function finishMatchInContract(index) {
+    try {
+        const tx = await contract.finishMatches(index);
+        await tx.wait();
+        console.log(`Match at index ${index} marked as finished.`);
+    } catch (error) {
+        console.error(`Error finishing match at index ${index}:`, error.message);
+    }
+}
+
 async function updateContractWithMatchDetails() {
     const matches = await fetchMatchDetails();
-
-    // Tüm maç skorlarını paralel olarak çek
     const scoresPromises = matches.map(match => fetchMatchScore(match.id));
     const scores = await Promise.all(scoresPromises);
 
@@ -76,21 +84,21 @@ async function updateContractWithMatchDetails() {
         const match = matches[i];
         const homeTeam = match.homeTeam.name;
         const awayTeam = match.awayTeam.name;
-        const endTime = Math.floor(new Date(match.utcDate).getTime() / 1000); // Unix timestamp
-        const { homeScore, awayScore } = scores[i];
+        const endTime = Math.floor(new Date(match.utcDate).getTime() / 1000);
+        const { homeScore, awayScore, status } = scores[i];
         const score = `${homeScore}-${awayScore}`;
 
         try {
-            // Maçı kontrata ekle
             await addMatchToContract(homeTeam, awayTeam, score, endTime);
+            if (status === 'FINISHED') {
+                await finishMatchInContract(i);
+            }
         } catch (error) {
             console.error(`Error updating contract for ${homeTeam} vs ${awayTeam}:`, error.message);
         }
     }
 }
 
-
-// Her 2 dakikada bir çalışacak şekilde ayarlandı
 setInterval(async () => {
     console.log('Updating contract with match details...');
     try {
@@ -98,9 +106,8 @@ setInterval(async () => {
     } catch (error) {
         console.error('Error in interval update:', error);
     }
-}, 120000 ); // 2 dakika
+}, 120000 );
 
-// İlk çalıştırma
 updateContractWithMatchDetails().catch((error) => {
     console.error('Unhandled error in initial execution:', error);
 });
