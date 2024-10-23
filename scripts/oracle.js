@@ -77,27 +77,33 @@ async function finishMatchInContract(index) {
 
 async function updateContractWithMatchDetails() {
     const matches = await fetchMatchDetails();
-    const scoresPromises = matches.map(match => fetchMatchScore(match.id));
-    const scores = await Promise.all(scoresPromises);
 
-    for (let i = 0; i < matches.length; i++) {
-        const match = matches[i];
+    for (const match of matches) {
         const homeTeam = match.homeTeam.name;
         const awayTeam = match.awayTeam.name;
         const endTime = Math.floor(new Date(match.utcDate).getTime() / 1000);
-        const { homeScore, awayScore, status } = scores[i];
+        const { homeScore, awayScore, status } = await fetchMatchScore(match.id);
         const score = `${homeScore}-${awayScore}`;
 
         try {
+            // Maçı kontrata ekle
             await addMatchToContract(homeTeam, awayTeam, score, endTime);
+            
+            // Sadece bitmişse maçı bitir
             if (status === 'FINISHED') {
-                await finishMatchInContract(i);
+                // Burada index, matches dizisinde bulunan match'in indexi olmalı
+                const matchIndex = matches.indexOf(match);
+                if (matchIndex !== -1) { // Geçerli bir index olup olmadığını kontrol et
+                    await finishMatchInContract(matchIndex);
+                }
             }
         } catch (error) {
             console.error(`Error updating contract for ${homeTeam} vs ${awayTeam}:`, error.message);
         }
     }
 }
+
+
 
 setInterval(async () => {
     console.log('Updating contract with match details...');
