@@ -17,6 +17,11 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "score",
+				"type": "string"
+			},
+			{
 				"internalType": "uint256",
 				"name": "endTime",
 				"type": "uint256"
