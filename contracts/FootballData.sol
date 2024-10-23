@@ -24,14 +24,14 @@ contract FootballData{
         _;
     }
 
-        function addMatch(string memory homeTeam,string memory awayTeam, uint256 endTime) public onlyOracle{
-            matches.push(Match(homeTeam, awayTeam, "0-0", false, endTime));
+        function addMatch(string memory homeTeam,string memory awayTeam,string memory score, uint256 endTime) public onlyOracle{
+            matches.push(Match(homeTeam, awayTeam, score, false, endTime));
         }
 
 
         function updateScore(uint256 index, string memory newScore) public onlyOracle{
             require(index < matches.length, "Match does not exist");
-            require(!matches[index].isFinished, "Match is already finished");
+
 
             matches[index].score = newScore;
         }
@@ -39,7 +39,6 @@ contract FootballData{
 
         function finishMatches(uint256 index) public onlyOracle{
             require(index < matches.length, "Match does not exist");
-            require(!matches[index].isFinished, "Match is already finished");
 
             matches[index].isFinished = true;
 

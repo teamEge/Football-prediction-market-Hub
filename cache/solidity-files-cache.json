@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\Egemen\\Documents\\GitHub\\egepoly-hub\\contracts\\FootballData.sol": {
-      "lastModificationDate": 1729207050217,
-      "contentHash": "5bcea75d473e0af046603ead4fed650d",
+      "lastModificationDate": 1729715185415,
+      "contentHash": "bc7dc9de807870d0b81b1d3764f32d5f",
       "sourceName": "contracts/FootballData.sol",
       "solcConfig": {
         "version": "0.8.26",
