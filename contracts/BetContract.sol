@@ -79,6 +79,7 @@ contract BetContract {
         string memory result = matches[matchIndex].score;
         Prediction winningPrediction;
 
+        // Sonuç analizi için string karşılaştırması
         if (keccak256(bytes(result)) == keccak256(bytes("HomeWin"))) {
             winningPrediction = Prediction.HomeWin;
         } else if (keccak256(bytes(result)) == keccak256(bytes("AwayWin"))) {
@@ -100,6 +101,7 @@ contract BetContract {
 
         uint256 totalPool = matchBet.totalHomeWin + matchBet.totalAwayWin + matchBet.totalDraw;
 
+        // Ödül dağıtımı
         for (uint256 i = 0; i < matchBet.usersWithBets.length; i++) {
             address user = matchBet.usersWithBets[i];
             Bet storage userBet = matchBet.userBets[user];

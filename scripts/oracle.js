@@ -22,7 +22,7 @@ const competitionId = 2014;
 async function fetchMatchDetails() {
     const matches = [];
     const today = new Date().toISOString().split('T')[0];
-    const endDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]; // Önümüzdeki 7 gün
+    const endDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
     try {
         const response = await axios.get(`${apiUrl}/competitions/${competitionId}/matches`, {
@@ -93,7 +93,7 @@ async function updateContractWithMatchDetails() {
             // Maçı kontrata ekle
             await addMatchToContract(homeTeam, awayTeam, score, endTime);
 
-            // Eğer maç durumu "FINISHED" ise kontrata bildir
+            // Eğer maç durumu FINISHED ise kontrata bildir
             if (status === 'FINISHED') {
                 await finishMatchInContract(i);
             }
