@@ -3,18 +3,22 @@ const { ethers } = require('ethers');
 const axios = require('axios');
 const FootballDataABI = require('../FootballData.abi.json');
 
+// Çevresel değişkenler
 const infuraUrl = process.env.INFURA_URL;
 const privateKey = process.env.PRIVATE_KEY;
 const contractAddress = process.env.CONTRACT_ADDRESS;
 const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
+// Ethereum sağlayıcısı ve cüzdan bağlantısı
 const provider = new ethers.providers.JsonRpcProvider(infuraUrl);
 const wallet = new ethers.Wallet(privateKey, provider);
 const contract = new ethers.Contract(contractAddress, FootballDataABI, wallet);
 
-const competitionId = 2001;
+// Şampiyonlar Ligi (CL) competitionId
+const competitionId = 2014;
 
+// API'den maç bilgilerini çekme fonksiyonu
 async function fetchMatchDetails() {
     const matches = [];
     const today = new Date().toISOString().split('T')[0];
@@ -22,13 +26,8 @@ async function fetchMatchDetails() {
 
     try {
         const response = await axios.get(`${apiUrl}/competitions/${competitionId}/matches`, {
-            headers: {
-                'X-Auth-Token': apiKey
-            },
-            params: {
-                dateFrom: today,
-                dateTo: endDate
-            }
+            headers: { 'X-Auth-Token': apiKey },
+            params: { dateFrom: today, dateTo: endDate }
         });
         matches.push(...response.data.matches);
     } catch (error) {
@@ -38,6 +37,7 @@ async function fetchMatchDetails() {
     return matches;
 }
 
+// Belirli bir maçın skorunu ve durumunu çekme fonksiyonu
 async function fetchMatchScore(matchId) {
     try {
         const response = await axios.get(`${apiUrl}/matches/${matchId}`, {
@@ -47,7 +47,7 @@ async function fetchMatchScore(matchId) {
         return {
             homeScore: score.fullTime.home !== null ? score.fullTime.home : 'N/A',
             awayScore: score.fullTime.away !== null ? score.fullTime.away : 'N/A',
-            status: response.data.status // Maç durumunu ekle
+            status: response.data.status // Maç durumunu ekliyoruz
         };
     } catch (error) {
         console.error(`Error fetching match score for match ID ${matchId}:`, error.message);
@@ -55,6 +55,7 @@ async function fetchMatchScore(matchId) {
     }
 }
 
+// Kontrata maç ekleme fonksiyonu
 async function addMatchToContract(homeTeam, awayTeam, score, endTime) {
     try {
         const tx = await contract.addMatch(homeTeam, awayTeam, score, endTime);
@@ -65,6 +66,7 @@ async function addMatchToContract(homeTeam, awayTeam, score, endTime) {
     }
 }
 
+// Kontratta bir maçı "bitmiş" olarak işaretleme fonksiyonu
 async function finishMatchInContract(index) {
     try {
         const tx = await contract.finishMatches(index);
@@ -75,10 +77,12 @@ async function finishMatchInContract(index) {
     }
 }
 
+// Kontratı maç detayları ile güncelleme fonksiyonu
 async function updateContractWithMatchDetails() {
     const matches = await fetchMatchDetails();
 
-    for (const match of matches) {
+    for (let i = 0; i < matches.length; i++) {
+        const match = matches[i];
         const homeTeam = match.homeTeam.name;
         const awayTeam = match.awayTeam.name;
         const endTime = Math.floor(new Date(match.utcDate).getTime() / 1000);
@@ -88,14 +92,10 @@ async function updateContractWithMatchDetails() {
         try {
             // Maçı kontrata ekle
             await addMatchToContract(homeTeam, awayTeam, score, endTime);
-            
-            // Sadece bitmişse maçı bitir
+
+            // Eğer maç durumu FINISHED ise kontrata bildir
             if (status === 'FINISHED') {
-                // Burada index, matches dizisinde bulunan match'in indexi olmalı
-                const matchIndex = matches.indexOf(match);
-                if (matchIndex !== -1) { // Geçerli bir index olup olmadığını kontrol et
-                    await finishMatchInContract(matchIndex);
-                }
+                await finishMatchInContract(i);
             }
         } catch (error) {
             console.error(`Error updating contract for ${homeTeam} vs ${awayTeam}:`, error.message);
@@ -103,8 +103,7 @@ async function updateContractWithMatchDetails() {
     }
 }
 
-
-
+// Belirli aralıklarla kontratı güncelleme işlemini başlat
 setInterval(async () => {
     console.log('Updating contract with match details...');
     try {
@@ -112,8 +111,9 @@ setInterval(async () => {
     } catch (error) {
         console.error('Error in interval update:', error);
     }
-}, 120000 );
+}, 120000); // Her 2 dakikada bir günceller
 
+// İlk çalıştırma
 updateContractWithMatchDetails().catch((error) => {
     console.error('Unhandled error in initial execution:', error);
 });
