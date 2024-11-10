@@ -6,7 +6,7 @@ const FootballDataABI = require('../FootballData.abi.json');
 // Çevresel değişkenler
 const infuraUrl = process.env.INFURA_URL;
 const privateKey = process.env.PRIVATE_KEY;
-const contractAddress = process.env.CONTRACT_ADDRESS;
+const contractAddress = process.env.FOOTBALL_DATA_CONTRACT_ADDRESS;
 const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
