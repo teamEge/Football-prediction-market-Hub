@@ -8,19 +8,15 @@ async function main() {
   // FootballData kontratını alıyoruz
   const FootballData = await hre.ethers.getContractFactory("FootballData");
 
-  // FootballData kontratını deploy ediyoruz
-  const footballDataContract = await FootballData.deploy();
-  await footballDataContract.deployed();
-
-  console.log("FootballData contract deployed to:", footballDataContract.address);
-
-  // Oracle adresi olarak deployer'ın adresini kullanıyoruz
+  // Oracle adresini deployer'dan alıyoruz
   const oracleAddress = deployer.address;
   console.log("Oracle address set to:", oracleAddress);
 
-  // Oracle adresini kontrata set etme işlemi
-  await footballDataContract.setOracle(oracleAddress);
-  console.log("Oracle address has been set in the contract.");
+  // FootballData kontratını deploy ediyoruz, oracle adresini constructor'a geçiriyoruz
+  const footballDataContract = await FootballData.deploy(oracleAddress);
+  await footballDataContract.deployed();
+
+  console.log("FootballData contract deployed to:", footballDataContract.address);
 }
 
 main()

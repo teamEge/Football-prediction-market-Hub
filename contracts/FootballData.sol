@@ -20,8 +20,9 @@ contract FootballData is IFootballData {
     Match[] public matches;
     address public oracle;
 
-    constructor() {
-        oracle = msg.sender;
+    // Constructor, oracle adresini parametre olarak alır
+    constructor(address _oracle) {
+        oracle = _oracle;
     }
 
     modifier onlyOracle() {
