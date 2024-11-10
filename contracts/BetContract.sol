@@ -1,12 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-interface IFootballData {
-    function getMatches() external view returns (FootballData.Match[] memory);
-}
+import "./FootballData.sol"; // FootballData'yı doğru şekilde import ettik
 
 contract BetContract {
-    enum Prediction { HomeWin, AwayWin, Draw } // 0: HomeWin, 1: AwayWin, 2: Draw
+    enum Prediction { HomeWin, AwayWin, Draw }
 
     struct Bet {
         uint256 amount;
@@ -24,7 +22,7 @@ contract BetContract {
 
     IFootballData public footballDataContract;
     address public oracle;
-    address public commissionAddress = 0x075E227344294C5EE368B0817881Af7Cf201f9a9;
+    address public commissionAddress;
     mapping(uint256 => MatchBets) public matchBets;
 
     modifier onlyOracle() {
@@ -32,27 +30,30 @@ contract BetContract {
         _;
     }
 
-    constructor(address _footballDataContract) {
+    constructor(address _footballDataContract, address _commissionAddress) {
         footballDataContract = IFootballData(_footballDataContract);
         oracle = msg.sender;
+        commissionAddress = _commissionAddress;
     }
 
-    // Bahis açma fonksiyonu
+    function setCommissionAddress(address _commissionAddress) external onlyOracle {
+        commissionAddress = _commissionAddress;
+    }
+
     function placeBet(uint256 matchIndex, Prediction _prediction) external payable {
         require(msg.value > 0, "Bet amount must be greater than zero.");
-        FootballData.Match[] memory matches = footballDataContract.getMatches(); // Burada Match dizisini alıyoruz
+        IFootballData.Match[] memory matches = footballDataContract.getMatches();
         require(matchIndex < matches.length, "Invalid match index.");
         require(!matches[matchIndex].isFinished, "Match already finished.");
 
         MatchBets storage matchBet = matchBets[matchIndex];
         Bet storage userBet = matchBet.userBets[msg.sender];
-        
+
         require(userBet.amount == 0, "You have already placed a bet.");
 
         userBet.amount = msg.value;
         userBet.prediction = _prediction;
 
-        // Kullanıcıyı bets listesine ekle
         matchBet.usersWithBets.push(msg.sender);
 
         if (_prediction == Prediction.HomeWin) {
@@ -63,14 +64,12 @@ contract BetContract {
             matchBet.totalDraw += msg.value;
         }
 
-        // Komisyonu kes ve belirlenen adrese gönder
         uint256 commission = (msg.value * 1) / 1000; // %0.1 komisyon
         payable(commissionAddress).transfer(commission);
     }
 
-    // Maç sonucunu güncelleme ve ödül dağıtımı
     function distributeRewards(uint256 matchIndex) external onlyOracle {
-        FootballData.Match[] memory matches = footballDataContract.getMatches();
+        IFootballData.Match[] memory matches = footballDataContract.getMatches();
         require(matchIndex < matches.length, "Invalid match index.");
         require(matches[matchIndex].isFinished, "Match is not finished.");
 
@@ -97,9 +96,10 @@ contract BetContract {
             winningPool = matchBet.totalDraw;
         }
 
+        require(winningPool > 0, "No bets placed on winning outcome.");
+
         uint256 totalPool = matchBet.totalHomeWin + matchBet.totalAwayWin + matchBet.totalDraw;
 
-        // Kazanan havuzdaki her kullanıcıya ödeme yap
         for (uint256 i = 0; i < matchBet.usersWithBets.length; i++) {
             address user = matchBet.usersWithBets[i];
             Bet storage userBet = matchBet.userBets[user];
