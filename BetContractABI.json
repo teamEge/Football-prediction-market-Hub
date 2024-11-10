@@ -1,0 +1,117 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "matchIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "distributeRewards",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "matchIndex",
+				"type": "uint256"
+			},
+			{
+				"internalType": "enum BetContract.Prediction",
+				"name": "_prediction",
+				"type": "uint8"
+			}
+		],
+		"name": "placeBet",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_footballDataContract",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "commissionAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "footballDataContract",
+		"outputs": [
+			{
+				"internalType": "contract IFootballData",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "matchBets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "totalHomeWin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalAwayWin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalDraw",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isPaidOut",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oracle",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
