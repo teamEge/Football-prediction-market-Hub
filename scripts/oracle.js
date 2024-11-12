@@ -16,13 +16,13 @@ const wallet = new ethers.Wallet(privateKey, provider);
 const contract = new ethers.Contract(contractAddress, FootballDataABI, wallet);
 
 // Şampiyonlar Ligi (CL) competitionId
-const competitionId = 2014;
+const competitionId = 2001;
 
 // API'den maç bilgilerini çekme fonksiyonu
 async function fetchMatchDetails() {
     const matches = [];
     const today = new Date().toISOString().split('T')[0];
-    const endDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const endDate = new Date(Date.now() + 20 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]; // 20 günlük aralık
 
     try {
         const response = await axios.get(`${apiUrl}/competitions/${competitionId}/matches`, {
