@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import "./FootballData.sol"; // FootballData'yı doğru şekilde import ettik
+import "./FootballData.sol"; // Correctly importing FootballData
 
 contract BetContract {
     enum Prediction { HomeWin, AwayWin, Draw }
@@ -64,7 +64,7 @@ contract BetContract {
             matchBet.totalDraw += msg.value;
         }
 
-        uint256 commission = (msg.value * 1) / 1000; // %0.1 komisyon
+        uint256 commission = (msg.value * 1) / 1000; // 0.1% commission
         payable(commissionAddress).transfer(commission);
     }
 
@@ -79,7 +79,7 @@ contract BetContract {
         string memory result = matches[matchIndex].score;
         Prediction winningPrediction;
 
-        // Sonuç analizi için string karşılaştırması
+        // Analyze the result using string comparison
         if (keccak256(bytes(result)) == keccak256(bytes("HomeWin"))) {
             winningPrediction = Prediction.HomeWin;
         } else if (keccak256(bytes(result)) == keccak256(bytes("AwayWin"))) {
@@ -101,7 +101,7 @@ contract BetContract {
 
         uint256 totalPool = matchBet.totalHomeWin + matchBet.totalAwayWin + matchBet.totalDraw;
 
-        // Ödül dağıtımı
+        // Distribute rewards
         for (uint256 i = 0; i < matchBet.usersWithBets.length; i++) {
             address user = matchBet.usersWithBets[i];
             Bet storage userBet = matchBet.userBets[user];
